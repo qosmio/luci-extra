@@ -19,7 +19,7 @@ This package provides temperature monitoring capabilities for routers using the 
 Add this repository to your `feeds.conf` or `feeds.conf.default`:
 
 ```conf
-src-git luciextra https://github.com/qosmio/luci-extra.git
+src-git luci_extra https://github.com/qosmio/luci-extra.git
 ```
 
 Update and install the feed:
