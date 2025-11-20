@@ -1,0 +1,15 @@
+{
+		"luci-mod-status-nss": {
+		"description": "Grant access to NSS statistics and thermal data",
+		"read": {
+			"cgi-io": [ "exec" ],
+			"file": {
+				"/sys/kernel/debug/qca-nss-drv/stats/*": [ "read" ],
+				"/sys/class/thermal/*" : [ "read" ]
+			},
+			"ubus": {
+				"file": [ "stat" ]
+			}
+		}
+	}
+}

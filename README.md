@@ -40,7 +40,8 @@ make -j$(nproc)
 
 ### Temperature Display
 
-![Temperature Monitoring](docs/screenshots/temp-display.png)
+![Dark](docs/screenshots/dark.png)
+![Light](docs/screenshots/light.png)
 
 *Real-time temperature monitoring for WiFi, CPU, and NSS components*
 
