@@ -85,6 +85,7 @@ const createSection = (title, data) => {
 	style.innerHTML = `
 		.label-grp {
 			display: inline-flex;
+			flex-wrap: wrap;
 			width: auto;
 			margin: 3px 0 0 0;
 			border-radius: 4px;
@@ -116,9 +117,12 @@ const createSection = (title, data) => {
 		.bg-error { background-color: var(--error-color-high) }
 		.bg-success { background-color: var(--success-color-high) }
 
-		@media screen and (max-device-width: 600px) {
-			.label-grp {margin:0}
+		@media screen and (max-width: 600px) {
+			.label-grp {margin:0; display: flex; width: 100%;}
 			.label-td {overflow: visible; padding: 0px 3px 0px 3px}
+			.tr { display: flex; flex-direction: column; width: 100%; padding-bottom: 10px; }
+			.td.left { width: 100% !important; display: block; padding: 2px 0; }
+			.label-l { flex-grow: 1; }
 		}
 	`;
 	table.appendChild(style);
@@ -126,7 +130,7 @@ const createSection = (title, data) => {
 	for (let i = 0; i < fields.length; i += 2) {
 		table.appendChild(
 			E('tr', { class: 'tr' }, [
-				E('td', { class: 'td left', width: '33%' }, [fields[i]]),
+				E('td', { class: 'td left' }, [fields[i]]),
 				E('td', { class: 'td left label-td' }, [fields[i + 1] || '?']),
 			]),
 		);
